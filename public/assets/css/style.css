@@ -2067,19 +2067,27 @@ Updated	 :	06.09.2019
       margin-bottom: -25px; } }
   .counter-single {
     background: #f0f6ff url(../../images/count-bg.png) no-repeat 100% 100%;
-    padding: 40px 20px 25px 20px;
-    border-bottom: 4px solid #0d6bff; }
+    padding: 20px 20px 25px 20px; }
   .counter-single-alt {
     border-bottom-color: #fdd046; }
+    .counter-single-Confirmed {
+      border-bottom: 10px solid rgba(0, 0, 255, 0.5); }
+      .counter-single-Recovered {
+        border-bottom: 10px solid rgba(0, 255, 0, 0.5); }
+        .counter-single-Deaths {
+          border-bottom: 10px solid rgba(255, 0, 0, 0.5); }
   .counter-amount {
     font-size: 24px;
     font-weight: 400; }
   .counter-title {
     font-weight: 400;
-    margin-bottom: 20px; }
+    margin-bottom: 5px; }
   .counter-date {
-    font-size: 12px; }
-  
+    font-size: 15px; }
+    .counter-single p {
+      margin: 10px 0;
+      font-size: 15px;
+    }
   .covid-head {
     margin-bottom: 30px; }
     .covid-head h2 {
@@ -2228,28 +2236,39 @@ Updated	 :	06.09.2019
       margin-bottom: 60px; }
   
     .counter-single {
-      padding: 40px 10px 25px 15px;
+      padding: 20px 10px 25px 15px;
       background-position: 135px 125px; }
     .counter-amount {
       font-size: 20px; }
     .counter-title {
-      margin-bottom: 20px;
+      margin-bottom: 5px;
       font-size: 20px; }
     .counter-date {
-      font-size: 11px; } }
+      font-size: 15px;
+      margin-bottom: 5px; }
+      .counter-single p {
+        margin: 10px 0;
+        font-size: 15px;
+      } }
   @media (min-width: 1200px) {
     .covid-doctors-info {
       max-width: 230px; }
   
     .counter-single {
       background: #f0f6ff url(../../images/count-bg.png) no-repeat 185px 170px;
-      padding: 70px 20px 25px 30px; }
+      padding: 30px 20px 25px 30px; }
     .counter-amount {
       font-size: 24px; }
     .counter-title {
-      margin-bottom: 20px; }
+      margin-bottom: 5px; }
     .counter-date {
-      font-size: 12px; } }
+      font-size: 15px;
+      margin-bottom: 5px; } 
+      .counter-single p {
+        margin: 10px 0;
+      }
+    }
+      
   /*FAQ*/
   .faq-nav {
     flex-direction: column;
