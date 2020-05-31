@@ -77,9 +77,6 @@ export default function Steps() {
                             </div>
                            </div>
                        </div>
-                       <div class="sec-link text-center mt-5">
-                           <a class="menu-link" href="#faq-section">Have any Questions? Check out Q&A</a>
-                   </div>
                    </div>
            </div>
         </div>

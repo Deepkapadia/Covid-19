@@ -3,7 +3,10 @@ import CountUp from 'react-countup';
 
 const Counter = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     if (!confirmed) {
-        return 'Loading...';
+        return <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row space-y-40 justify-content-center"><h1 style={{color:'#ff5d5d'}}>Loading....</h1></div></div></div></div>;
       }
     return (
         <section class="section-lg pt-lg-0 counter-wt">

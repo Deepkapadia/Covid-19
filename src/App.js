@@ -35,7 +35,7 @@ class App extends Component {
     const { data, country } = this.state;
     return (
       <div className="page-wraper">
-        <Header />
+        <Header/>
         <div className="main-wrapper">
           <Counter data={data}/>
           <CountryPicker handleCountryChange={this.handleCountryChange} />         
