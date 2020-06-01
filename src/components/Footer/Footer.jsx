@@ -1,9 +1,13 @@
-import React from 'react';
-import Logo from '../../Logos/logo-dark.png';
+import React,{useEffect} from 'react';
+import Logo from '../../images/logo-dark.png';
+import Aos from 'aos';
 
 export default function Footer() {
+    useEffect(()=> {
+        Aos.init({duration:1500});
+    },[]);
     return (
-        <footer className="footer section section-lg" id="footer">
+        <footer data-aos="fade-up" className="footer section section-lg" id="footer">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-lg-3 col-sm-6">

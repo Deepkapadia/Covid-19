@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 import Hero from '../HeroBanner/Hero';
-import Logo from '../../Logos/logo-dark.png';
+import Logo from '../../images/logo-dark.png';
 
 class Header extends Component {
+    
     render() {
+
         return (
-            <header className="header clearheader" id="banner">
+            <header data-aos="fade-down" className="header clearheader" id="banner">
                 <div className="navbar-bar navbar-wt" id="active-sticky">
                     <div className="container">
                         <div className="navbar-innr ml-0">
                             <div className="navbar-base">
-                                <a className="navbar-logo-wt" href="./"><img src={Logo} alt="logo"/></a>
+                                <a  className="navbar-logo-wt" href="./"><img src={Logo} alt="logo"/></a>
                                 <ul className="navbar-tools d-lg-none">
                                     <li></li>
                                 </ul>

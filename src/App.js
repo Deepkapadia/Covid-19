@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import 'aos/dist/aos.css';
 import { fetchData } from './api/';
 import Header from './components/Header/Header';
 import Counter from './components/Counter/Counter';

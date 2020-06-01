@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Line, Bar } from 'react-chartjs-2';
+import Aos from 'aos';
 
 import { fetchDailyData } from '../../api';
 
 
 const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const [dailyData, setDailyData] = useState({});
+  
 
   useEffect(() => {
+
+    Aos.init({duration:1500});
+
     const fetchMyAPI = async () => {
       const initialDailyData = await fetchDailyData();
 
@@ -64,11 +69,11 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   return (
 
 
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="row space-y-40 justify-content-center">
-            <div class="col-lg-12 col-sm-12">
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-12">
+          <div className="row space-y-40 justify-content-center">
+            <div data-aos="fade-down" className="col-lg-12 col-sm-12">
               {country ? barChart : lineChart}
             </div>
           </div>
