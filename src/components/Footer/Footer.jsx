@@ -3,9 +3,11 @@ import Logo from '../../images/logo-dark.png';
 import Aos from 'aos';
 
 export default function Footer() {
+
     useEffect(()=> {
         Aos.init({duration:1500});
     },[]);
+    
     return (
         <footer data-aos="fade-up" className="footer section section-lg" id="footer">
         <div className="container">
@@ -16,7 +18,7 @@ export default function Footer() {
                             <img src={Logo} alt=""/>
                         </div>
                         <div className="footer-address">
-                            <p><span className="footer-md">Emergency Call:</span><a href="tel:4480999225">+9662520605</a></p>
+                            <p><span className="footer-md">Emergency Call:</span><a href="tel:9662520605">+91 9662520605</a></p>
                             <p><span className="footer-md">Mail Us:</span><a href="mailto:kapadia.deep12@gmail.com">kapadia.deep12@gmail.com</a></p>                           
                         </div>
                     </div>
@@ -28,12 +30,10 @@ export default function Footer() {
                         </div>
                         <div className="footer-address">
                             <p><span className="footer-md">Contact Address:</span>India, Gujarat, Surat</p>
-                            
                         </div>
                     </div>
                 </div>
                 <div className="col-lg-3 col-sm-6">
-                    
                 </div>
                 <div className="col-lg-3 col-sm-6">
                     <div className="footer-wgs">
@@ -44,7 +44,6 @@ export default function Footer() {
                         <div className="footer-help covid-help">
                             <h6>We need your Help</h6>
                             <p>Would You like to Help people across the world who are suffering with COVID -19?</p>
-                            
                         </div>
                         <div className="footer-social">
                             <ul>

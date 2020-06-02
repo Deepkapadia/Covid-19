@@ -1,49 +1,63 @@
 import React, { Component } from 'react';
-import Hero from '../HeroBanner/Hero';
+import { Link } from 'react-router-dom';
 import Logo from '../../images/logo-dark.png';
 
 class Header extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { showNav: true };
+        this.toggleNav = this.toggleNav.bind(this);
+    }
+    closeMenu() {
+        this.setState({ showNav: false })
+      }
+    
+    toggleNav() {
+        this.setState({ 
+            showNav: !this.state.showNav
+        })
+    }
     
     render() {
-
+        const { showNav } = this.state
         return (
-            <header data-aos="fade-down" className="header clearheader" id="banner">
-                <div className="navbar-bar navbar-wt" id="active-sticky">
-                    <div className="container">
-                        <div className="navbar-innr ml-0">
-                            <div className="navbar-base">
-                                <a  className="navbar-logo-wt" href="./"><img src={Logo} alt="logo"/></a>
-                                <ul className="navbar-tools d-lg-none">
-                                    <li></li>
+            <header class="header clearheader" id="banner">
+                <div class="navbar-bar navbar-wt" id="active-sticky">
+                    <div class="container">
+                        <div class="navbar-innr ml-0">
+                            <div class="navbar-base">
+                                <a class="navbar-logo-wt" href="./"><img src={Logo} srcset={Logo} alt="logo"/></a>
+                                <ul class="navbar-tools d-lg-none">
+                                    <li><a href="/#" onClick={this.toggleNav} class="navbar-toggle "><i class="fas fa-bars"></i></a></li>
                                 </ul>
                             </div>
-                            <div className="navbar-content navbar-content-wt navbar-toggle-content mr-0">
-                                <a href="/#" className="navbar-toggle navbar-open"><i className="fas fa-times"></i></a>
-                                <ul className="navbar-menu">
-                                    <li>
-                                        <a className="menu-link" href="index.html">Home</a>
+                            <div className={(showNav ? 'inActive' : 'navbar-mobile active') + 'navbar-content navbar-content-wt navbar-toggle-content mr-0 '} >
+                                <a href="/#"  onClick={this.toggleNav} class="navbar-toggle navbar-close"><i class="fas fa-times"></i></a>
+                                <ul class="navbar-menu">
+                                    <li class="active">
+                                        <Link to="/" onClick={this.toggleNav} class="menu-link" href="/#">Home</Link>
                                     </li>
                                     <li>
-                                        <a className="menu-link" href="#about">COVID-19</a>
+                                        <a onClick={this.toggleNav} className="menu-link" href="#about">COVID-19</a>
                                     </li>
                                     <li>
-                                        <a className="menu-link" href="#symptoms">Symptoms</a>
+                                        <Link to="/symptoms" onClick={this.toggleNav} className="menu-link" >Symptoms</Link>
                                     </li>
                                     <li>
-                                        <a className="menu-link" href="#prevention">Prevention</a>
+                                        <Link to="/prevention" onClick={this.toggleNav} className="menu-link" >Prevention</Link>
                                     </li>
                                     <li>
-                                        <a className="menu-link" href="#footer">Contact</a>
+                                        <a onClick={this.toggleNav} className="menu-link" href="#footer">Contact</a>
                                     </li>
                                 </ul>
                             </div>
-                            <div className="top-symptoms">
-                                <a className="btn" href="/#">+ Symptoms</a>
+                            <div class="top-symptoms">
+                                <Link to="/symptoms" class="btn" href="#">+ Symptoms</Link>
                             </div>
                         </div>
                     </div>
                 </div>
-                <Hero/>
             </header>
         )
     }

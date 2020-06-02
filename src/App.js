@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router , Route } from 'react-router-dom';
 import './App.css';
 import 'aos/dist/aos.css';
 import { fetchData } from './api/';
@@ -12,6 +13,7 @@ import Steps from './components/StepsForProtection/Steps';
 import Footer from './components/Footer/Footer';
 import Chart from './components/Chart/Chart';
 import CountryPicker from './components/CountryPicker/CountryPicker';
+import Hero from './components/HeroBanner/Hero';
 
 
 class App extends Component {
@@ -35,20 +37,33 @@ class App extends Component {
   render(){
     const { data, country } = this.state;
     return (
-      <div className="page-wraper">
-        <Header/>
-        <div className="main-wrapper">
-          <Counter data={data}/>
-          <CountryPicker handleCountryChange={this.handleCountryChange} />         
-          <Chart data={data} country={country} />
-          <About/>
-          <Symptoms/>
-          <Protection/>
-          <Prevention/>
-          <Steps/>
+      <Router>
+        <div className="page-wraper">
+          <Header/>
+          
+            <div className="main-wrapper">
+            <Route path="/" exact>
+              <Hero/>
+              <Counter data={data}/>
+              <CountryPicker handleCountryChange={this.handleCountryChange} />         
+              <Chart data={data} country={country} />
+              <About/>
+            </Route>
+
+            <Route path="/symptoms" component={Symptoms}>
+              <Symptoms/>
+              <Protection/>
+            </Route>
+
+            <Route path="/prevention" component={Prevention}>
+              <Prevention/>
+              <Steps/>
+            </Route>
+            
+            </div>
+          <Footer/>
         </div>
-        <Footer/>
-      </div>
+      </Router>
     );
   }
 
