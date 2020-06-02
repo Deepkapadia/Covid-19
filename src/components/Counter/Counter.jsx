@@ -4,9 +4,14 @@ import CountUp from 'react-countup';
 const Counter = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
     if (!confirmed) {
         return <div className="container">
-        <div className="row">
-            <div className="col-lg-12">
-                <div className="row space-y-40 justify-content-center"><h1 style={{color:'#ff5d5d'}}>Loading....</h1></div></div></div></div>;
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="row space-y-40 justify-content-center">
+                                <h1 style={{color:'#ff5d5d'}}>Loading....</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>;
       }
     return (
         <section className="section-lg pt-lg-0 counter-wt">
@@ -17,7 +22,7 @@ const Counter = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                          <div className="col-lg-4 col-sm-6">
                              <div className="counter-single counter-single-Confirmed">
                                 <span className="counter-amount"><CountUp start={0} end={confirmed.value} duration={2.75} separator="," /></span>
-                                <h4 className="counter-title">Confirmed cases</h4>
+                                <h4 className="counter-title">Confirmed cases </h4>
                                 <span className="counter-date">{new Date(lastUpdate).toDateString()}</span>
                                 <p>Number of active cases of COVID-19.</p>
                              </div>

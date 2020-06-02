@@ -27,6 +27,9 @@ class App extends Component {
     const data = await fetchData();
 
     this.setState({ data });
+
+    console.log(data);
+    
   }
 
   handleCountryChange = async (country) => {
@@ -40,30 +43,32 @@ class App extends Component {
       <Router>
         <div className="page-wraper">
           <Header/>
-          
-            <div className="main-wrapper">
-            <Route path="/" exact>
+  
+          <div className="main-wrapper">
+
+            <Route path="/" exact> 
               <Hero/>
-              <Counter data={data}/>
+            <Counter data={data}/>
               <CountryPicker handleCountryChange={this.handleCountryChange} />         
               <Chart data={data} country={country} />
               <About/>
             </Route>
 
-            <Route path="/symptoms" component={Symptoms}>
+            <Route path="/symptoms">
               <Symptoms/>
               <Protection/>
             </Route>
 
-            <Route path="/prevention" component={Prevention}>
+            <Route path="/prevention">
               <Prevention/>
               <Steps/>
             </Route>
-            
-            </div>
+
+          </div>
           <Footer/>
         </div>
       </Router>
+      
     );
   }
 

@@ -1008,7 +1008,7 @@ body {
   color: #000; }
 
 .navbar-mobile.active {
-  background: #334bdb; }
+  background: #FF5D61; }
   .navbar-mobile.active .navbar-menu > li > a {
     color: #fff; }
 
@@ -2533,7 +2533,7 @@ body {
   color: #262f3e;
   font-weight: 500; }
   .navbar-content-wt .navbar-menu > li > a:hover {
-    color: #c080da; }
+    color: #ff5c5d; }
 
 .banner-wt {
   background: url(../src/images/slide-b1.jpg) no-repeat 50% 50%;

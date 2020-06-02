@@ -8,6 +8,7 @@ export default function Symptoms() {
         Aos.init({duration:1500});
     },[]);
 
+
     return (
         <section className="section-lg covid-bg pb-md-0" id="symptoms">
         <div className="container">
