@@ -26,7 +26,7 @@ class Header extends Component {
                 <div className="container">
                     <div className="navbar-innr ml-0">
                         <div className="navbar-base">
-                            <a className="navbar-logo-wt" href="./"><img src={Logo} srcset={Logo} alt="logo"/></a>
+                            <a className="navbar-logo-wt" href="./"><img src={Logo} srcSet={Logo} alt="logo"/></a>
                             <ul className="navbar-tools d-lg-none">
                                 <li><button onClick={this.toggleNav} style={{border:'none', background:'none'}} className="navbar-toggle"><i className="fas fa-bars"></i></button></li>
                             </ul>

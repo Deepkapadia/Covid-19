@@ -5,15 +5,15 @@ import 'aos/dist/aos.css';
 import { fetchData } from './api/';
 import Header from './components/Header/Header';
 import Counter from './components/Counter/Counter';
-import About from './components/About/About';
-import Symptoms from './components/Symptoms/Symptoms';
-import Protection from './components/Protection/Protection';
-import Prevention from './components/Prevention/Prevention';
-import Steps from './components/StepsForProtection/Steps';
+import About from './container/About/About';
+import Symptoms from './container/Symptoms/Symptoms';
+import Protection from './container/Protection/Protection';
+import Prevention from './container/Prevention/Prevention';
+import Steps from './container/StepsForProtection/Steps';
 import Footer from './components/Footer/Footer';
 import Chart from './components/Chart/Chart';
 import CountryPicker from './components/CountryPicker/CountryPicker';
-import Hero from './components/HeroBanner/Hero';
+import Hero from './container/HeroBanner/Hero';
 
 
 class App extends Component {
@@ -26,10 +26,7 @@ class App extends Component {
   async componentDidMount() {
     const data = await fetchData();
 
-    this.setState({ data });
-
-    console.log(data);
-    
+    this.setState({ data });    
   }
 
   handleCountryChange = async (country) => {
@@ -47,8 +44,8 @@ class App extends Component {
           <div className="main-wrapper">
 
             <Route path="/" exact> 
-              <Hero/>
-            <Counter data={data}/>
+              <Hero data={data}/>
+              <Counter data={data}/>
               <CountryPicker handleCountryChange={this.handleCountryChange} />         
               <Chart data={data} country={country} />
               <About/>

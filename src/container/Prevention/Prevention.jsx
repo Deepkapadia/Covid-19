@@ -1,9 +1,11 @@
 import React,{useEffect} from 'react';
 import Aos from 'aos';
+
 export default function Prevention() {
     useEffect(()=> {
         Aos.init({duration:1500});
     },[]);
+    
     return (
         <section className="section-lg covid-prevention" id="prevention">
                <div className="container">

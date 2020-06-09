@@ -1,8 +1,9 @@
 import React,{ useEffect } from 'react'
 import Aos from 'aos';
 
-const Hero = () => {
 
+const Hero = () => {
+    
     useEffect(()=> {
         Aos.init({duration:1500});
     },[]);
