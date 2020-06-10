@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router , Route } from 'react-router-dom';
 import './App.css';
 import 'aos/dist/aos.css';
-import { fetchData } from './api/';
+import { fetchData, worldTotalData } from './api/';
 import Header from './components/Header/Header';
 import Counter from './components/Counter/Counter';
 import About from './container/About/About';
@@ -20,13 +20,15 @@ class App extends Component {
 
   state = {
     data: {},
+    WorldTotalData: {},
     country: '',
   }
 
   async componentDidMount() {
     const data = await fetchData();
-
-    this.setState({ data });    
+    const WorldTotalData = await worldTotalData()   
+    
+    this.setState({ data, WorldTotalData });    
   }
 
   handleCountryChange = async (country) => {
@@ -35,7 +37,7 @@ class App extends Component {
     this.setState({ data, country: country });
   }
   render(){
-    const { data, country } = this.state;
+    const { data, country ,WorldTotalData } = this.state;
     return (
       <Router>
         <div className="page-wraper">
@@ -44,7 +46,7 @@ class App extends Component {
           <div className="main-wrapper">
 
             <Route path="/" exact> 
-              <Hero data={data}/>
+              <Hero WorldTotalData={WorldTotalData}/>
               <Counter data={data}/>
               <CountryPicker handleCountryChange={this.handleCountryChange} />         
               <Chart data={data} country={country} />
